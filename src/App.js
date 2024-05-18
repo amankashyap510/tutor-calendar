@@ -1,25 +1,29 @@
-import logo from './logo.svg';
+
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import MyCalendar from './components/Calendar';
+import EventList from './components/EventList';
+import GoogleLogin from './components/GoogleLogin';
+import { UserProvider } from './context/UserContext';
 import './App.css';
 
-function App() {
+
+
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <UserProvider>
+    <Router>
+      <div>
+        <Routes>
+        <Route path="/" element={<MyCalendar />} />
+          <Route path="/events" element={<EventList />} />
+          <Route path="/login" element={<GoogleLogin />} />
+        </Routes>
+      </div>
+    </Router>
+    </UserProvider>
   );
-}
+};
 
 export default App;

@@ -1,0 +1,21 @@
+
+.google-login {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .google-login .g-signin2 {
+    width: 200px;
+    height: 40px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .google-login .g-signin2:hover {
+    background-color: #f0f0f0;
+  }
+  
